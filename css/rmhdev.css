@@ -1,10 +1,25 @@
 body, h1, h2, h3, h4, h5, h6 { color: #555; }
 
-.rmhdev-header h1 { padding-top: 20px; }
-h2 { border-bottom: 1px dotted #eeeeee; } 
+.rmhdev-header { border-bottom: 1px solid #ddd; margin-bottom: 25px; }
+.rmhdev-header h1 { 
+    padding-top: 20px; 
+    text-shadow: 0 1px 1px rgba(122, 122, 122, 0.75);
+}
+h2 { 
+    font-size: 150%; 
+    border: 1px solid #eeeeee; 
+    background-color: #eeffff; 
+    padding: 0 5px; 
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+} 
 .rmhdev-light { color: #cccccc; }
 .rmhdev-description { display: none; margin: 0; font-style: italic; font-size: 110%; }
-.rmhdev-footer { margin-top: 15px; padding: 15px 5px; background-color: #eeeeee; }
+.rmhdev-footer { color: #aaa; font-size: 90%; margin-top: 25px; padding: 15px 5px; border-top: 1px solid #ddd }
 dl.rmhdev-contact-list {}
 dl.rmhdev-contact-list dt { font-weight: bold; }
 dl.rmhdev-contact-list dd { display: block; width: 100%; }
