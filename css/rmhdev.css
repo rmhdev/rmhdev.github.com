@@ -1,0 +1,13 @@
+body, h1, h2, h3, h4, h5, h6 { color: #555; }
+
+.rmhdev-header h1 { padding-top: 20px; }
+h2 { border-bottom: 1px dotted #eeeeee; } 
+.rmhdev-light { color: #cccccc; }
+.rmhdev-description { display: none; margin: 0; font-style: italic; font-size: 110%; }
+.rmhdev-footer { margin-top: 15px; padding: 15px 5px; background-color: #eeeeee; }
+dl.rmhdev-contact-list {}
+dl.rmhdev-contact-list dt { font-weight: bold; }
+dl.rmhdev-contact-list dd { display: block; width: 100%; }
+dl.rmhdev-contact-list dd:before {
+  content: '\2014 \00A0';
+}
