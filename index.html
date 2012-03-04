@@ -13,11 +13,8 @@ title: rmhdev site
         </ul>
     </div>
     {% endif %}
-
-    {{ site.pages.about }}
-
     {% for mypage in site.pages reversed %}
         {% if mypage.layout == "page" %}<div class="one-third column">
-        {{ mypage.content }}
+{{ mypage.content }}
         </div>{% endif %}
     {% endfor %}
