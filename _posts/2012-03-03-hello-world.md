@@ -2,6 +2,8 @@
 layout: post
 published: false
 title: Hello world
+date: "2012-03-03 21:06"
+tags: [test, hello]
 location: Donostia/San Sebastián
 ---
 

@@ -20,8 +20,9 @@ h2 {
 .rmhdev-light { color: #cccccc; }
 .rmhdev-description { display: none; margin: 0; font-style: italic; font-size: 110%; }
 .rmhdev-footer { color: #aaa; font-size: 90%; margin-top: 25px; padding: 15px 5px; border-top: 1px solid #ddd }
+.rmhdev-footer-extra { float: right; }
 dl.rmhdev-contact-list {}
-dl.rmhdev-contact-list dt { font-weight: bold; }
+dl.rmhdev-contact-list dt { }
 dl.rmhdev-contact-list dd { display: block; width: 100%; }
 dl.rmhdev-contact-list dd:before {
   content: '\2014 \00A0';

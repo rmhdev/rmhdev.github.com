@@ -14,24 +14,8 @@ title: rmhdev site
     </div>
     {% endif %}
 
-    <div class="one-third column">
-        <h2 class="rmhdev-title" id="about">About me</h2>
-        <p>My name is <strong>Rober Martín H</strong>, i was born in <strong>1980</strong> and, when i'm not traveling or riding my bike, i code stuff. I started in the development world in <strong>2006</strong>, and now i'm currently living and working in <strong>Donostia/San Sebastián</strong>.</p>
-    </div>
-
-    <div class="one-third column">
-        <h2 class="rmhdev-title" id="code">Code</h2>
-        <p>I mostly code in <strong>PHP</strong> and <strong>Javascript</strong>. In the day-by-day work my principal tool is <strong>Symfony</strong>, a great PHP framework.</p>
-        <p>In <a href="https://github.com/rmhdev">my GitHub</a> you can see some katas and pet projects that i code in my free time.</p>
-    </div>
-
-    <div class="one-third column">
-        <h2 class="rmhdev-title" id="contact">Contact</h2>
-        <p>Don't hesitate to contact me, i'll be very grateful and try to answer as soon as possible.</p>
-
-        <dl class="rmhdev-contact-list">
-            <dt>Professional issues:</dt> <dd>rober (at) rmhdev (dot) net</dd></li>
-            <dt>Personal stuff:</dt> <dd>rmhdev (at) gmail (dot) com</dd></li>
-            <dt>You can follow me on Twitter:</dt> <dd><a href="http://twitter.com/rmhdev">@rmhdev</a></dd></li>
-        </dl>
-    </div>
+    {% for mypage in site.pages %}
+        {% if mypage.layout == "page" %}<div class="one-third column">
+        {{ mypage.content }}
+        </div>{% endif %}
+    {% endfor %}
