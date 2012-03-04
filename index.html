@@ -14,7 +14,9 @@ title: rmhdev site
     </div>
     {% endif %}
 
-    {% for mypage in site.pages %}
+    {{ site.pages.about }}
+
+    {% for mypage in site.pages reversed %}
         {% if mypage.layout == "page" %}<div class="one-third column">
         {{ mypage.content }}
         </div>{% endif %}
