@@ -5,6 +5,7 @@
 * Free to use under the MIT license.
 * http://www.opensource.org/licenses/mit-license.php
 * 8/17/2011
+* Edited by rmhdev
 */
 
 /* Table of Content
@@ -16,6 +17,42 @@
 
 /* #Site Styles
 ================================================== */
+body, h1, h2, h3, h4, h5, h6 { color: #555; }
+
+.rmhdev-header { border-bottom: 1px solid #ddd; margin-bottom: 25px; }
+.rmhdev-header h1 { 
+    padding-top: 20px; 
+    text-shadow: 0 1px 1px rgba(122, 122, 122, 0.75);
+}
+h2 { 
+    font-size: 150%; 
+    border: 1px solid #eeeeee; 
+    background-color: #ffeeee; 
+    padding: 0 5px; 
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+} 
+.rmhdev-light { color: #cccccc; }
+.rmhdev-description { display: none; }
+.rmhdev-footer { 
+	color: #aaa; 
+	font-size: 90%; 
+	margin-top: 25px; 
+	padding: 15px 5px; 
+	border-top: 1px solid #ddd; 
+}
+.rmhdev-footer-extra { float: right; display: inline-block; }
+.rmhdev-footer-author { float: left; display: inline-block; }
+dl.rmhdev-contact-list {}
+dl.rmhdev-contact-list dt { }
+dl.rmhdev-contact-list dd { display: block; width: 100%; clear: both; }
+dl.rmhdev-contact-list dd:before {
+  content: '\2014 \00A0';
+}
 
 /* #Page Styles
 ================================================== */
@@ -30,13 +67,20 @@
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
 	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {}
+	@media only screen and (max-width: 767px) {
+		.rmhdev-header { margin-bottom: 10px; }
+		.rmhdev-footer { margin-top: 30px; }
+	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		.rmhdev-footer-extra { float: right; display: inline-block; }
+	}
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 479px) {}
+	@media only screen and (max-width: 479px) {
+		.rmhdev-footer-extra { float: none; clear: both;}
+	}
 
 
 /* #Font-Face

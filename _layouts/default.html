@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>rmhdev's site</title>
+    <title>{{ site.author.name }} ({{ site.author.twitter }})</title>
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.author.name }}">
 
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/skeleton.css">
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/rmhdev.css">
 
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,7 +30,7 @@
         {{ content }}
         
         <div class="sixteen columns rmhdev-footer">
-            &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}
+            <span class="rmhdev-footer-author">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
             <span class="rmhdev-footer-extra">Handmade using <a href="http://getskeleton.com">skeleton</a> + <a href="https://github.com/mojombo/jekyll/">jekyll</a></span>
         </div>
     </div>
