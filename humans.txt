@@ -1,0 +1,17 @@
+---
+layout: nil
+# http://humanstxt.org/
+---
+
+/* TEAM */
+  Developer: {{ site.author.name }}
+  Site: {{ site.production_url }}
+  Twitter: {{ site.author.twitter }}
+  Location: {{ site.author.location }}
+
+/* SITE */
+  Last update: {{ site.time | date: "%Y-%m-%d %H:%M" }}
+  Standards: HTML5, CSS3
+  Components: Skeleton
+  Software: Jekyll
+  IDE: Sublime 2, Vim

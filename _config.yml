@@ -1,7 +1,7 @@
 markdown: rdiscount
 pygments: true
 
-description: "Rober Martín H's site, developer from Donostia/San Sebastián"
+description: "Rober Martín H, developer from Donostia/San Sebastián"
 
 author :
   name : Rober Martín H
@@ -9,6 +9,7 @@ author :
   twitter : rmhdev
   email_pro: "rober (at) rmhdev.net"
   email_personal: "rmhdev (at) gmail.com"
+  location: Donostia/San Sebastián
 
 production_url : http://rmhdev.net
 
