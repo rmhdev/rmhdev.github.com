@@ -1,36 +1,16 @@
 ---
-layout: default
-title: rmhdev site
+layout: home
 ---
-
-    {% if site.posts > 0 %}
-    <div class="sixteen columns">
-        <h2>Blog</h2>
-        <ul class="posts">
-            {% for post in site.posts %}
-            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-
-    <div class="one-third column">
-        <h2>About me</h2>
-        <p>My name is <strong>Rober Martín H</strong>, i was born in <strong>1980</strong> and, when i'm not traveling or riding my bike, i code stuff. I started in the development world in <strong>2006</strong>, and now i'm currently living and working in <strong>Donostia/San Sebastián</strong>.</p>
-    </div>
-
-    <div class="one-third column">
-        <h2>Code</h2>
-        <p>I mostly code in <strong>PHP</strong> and <strong>Javascript</strong>. In the day-by-day work my principal tool is <strong>Symfony</strong>, a great PHP framework.</p>
-        <p>In <a href="https://github.com/{{ site.author.github }}" title="Visit my GitHub">my GitHub</a> you can see some katas and pet projects that i code in my free time.</p>
-    </div>
-
-    <div class="one-third column">
-        <h2>Contact</h2>
-        <p>Don't hesitate to contact me, i'll be very grateful and try to answer as soon as possible.</p>
-        <dl class="rmhdev-contact-list">
-            <dt>Professional issues:</dt> <dd>{{ site.author.email_pro }}</dd>
-            <dt>Personal stuff:</dt> <dd>{{ site.author.email_personal }}</dd>
-            <dt>You can follow me on Twitter:</dt> <dd><a href="http://twitter.com/{{ site.author.twitter }}" title="Follow me on Twitter">@{{ site.author.twitter }}</a></dd>
-        </dl>
-    </div>
+{% for post in site.posts %}
+                    <article class="article">
+                        <header class="header">
+                            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                            <small class="publish-date">
+                                <time datetime="{{ post.date | date_to_string }}" pubdate="pubdate">{{ post.date | date_to_string }}</time>
+                            </small>
+                        </header>
+                        <div class="abstract">
+                            <p>{{ post.abstract }}</p>
+                        </div>
+                    </article>
+{% endfor %}

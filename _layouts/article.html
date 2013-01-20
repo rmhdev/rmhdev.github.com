@@ -1,0 +1,17 @@
+---
+layout: default
+type: article
+---
+                    <div class="box article article-page">
+
+                        <header class="header">
+                            <h1>{{ page.title }}</h1>
+                            <small class="publish-date">
+                                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate="pubdate">{{ page.date | date_to_long_string }}</time>
+                            </small>
+                        </header>
+
+                        <div class="article-content">
+{{ content }}
+                        </div>
+                    </div>

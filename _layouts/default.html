@@ -1,53 +1,18 @@
 <!DOCTYPE html>
-<!--[if lt IE7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <title>{{ site.author.name }} ({{ site.author.twitter }})</title>
-    <meta name="description" content="{{ site.description }}">
-    <meta name="author" content="{{ site.author.name }}">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/skeleton.css">
-    <link rel="stylesheet" href="/css/layout.css">
-
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-</head>
+{% include html_head.html %}
 <body>
-    <div class="container">
-        <div class="sixteen columns rmhdev-header">
-            <h1 class="">rmhdev<span class="rmhdev-light">.net</span></h1>
-            <p class="rmhdev-description">{{ site.description }}</p>
+
+{% include header.html %}
+
+    <main>
+        <div class="container">
+{{ content }}
         </div>
+    </main>
 
-        {{ content }}
-        
-        <div class="sixteen columns rmhdev-footer">
-            <span class="rmhdev-footer-author">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
-            <span class="rmhdev-footer-extra">Handmade using <a href="http://getskeleton.com">skeleton</a> + <a href="https://github.com/mojombo/jekyll/">jekyll</a></span>
-        </div>
-    </div>
+{% include footer.html %}
 
-{% if site.analytics.enabled %}
-    <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        </script>
-{% endif %}
+{% include html_foot.html %}
 </body>
 
 </html>

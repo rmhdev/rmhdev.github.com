@@ -10,93 +10,344 @@
 
 /* Table of Content
 ==================================================
-	#Site Styles
-	#Page Styles
-	#Media Queries
-	#Font-Face */
+    #Site Styles
+    #Page Styles
+    #Media Queries
+    #Font-Face
+  #Syntax Highlighting */
 
 /* #Site Styles
 ================================================== */
-body, h1, h2, h3, h4, h5, h6 { color: #555; }
+html, body {
+  background-color: #eee; 
+}
+body { 
+  margin-top: 0; 
+}
+p.lead { font-size: 19px; }
 
-.rmhdev-header { border-bottom: 1px solid #ddd; margin-bottom: 25px; }
-.rmhdev-header h1 { 
-    padding-top: 20px; 
-    text-shadow: 0 1px 1px rgba(122, 122, 122, 0.75);
+h1 { 
+  font-size: 160%; 
+  text-align: center; 
+  margin: -10px -10px 0;
+  padding: 10px;
+  /*border-bottom: 1px solid #dddddd; */
+  /*background-color: #f5f5f5;*/
 }
-h2 { 
-    font-size: 150%; 
-    border: 1px solid #eeeeee; 
-    background-color: #ffeeee; 
-    padding: 0 5px; 
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-} 
-.rmhdev-light { color: #cccccc; }
-.rmhdev-description { display: none; }
-.rmhdev-footer { 
-	color: #aaa; 
-	font-size: 90%; 
-	margin-top: 25px; 
-	padding: 15px 5px; 
-	border-top: 1px solid #ddd; 
+
+h2 { font-size: 130%; }
+h3 { font-size: 110%; }
+
+.footer { margin-bottom: 20px; font-size: 90%; }
+.footer-extra { float: right; display: inline; clear: right; }
+
+small.publish-date { font-size: 100%; }
+.publish-date { font-family: monospace; }
+.articles .publish-date { color: #aaa; float: left; padding-top: 2px;}
+.articles .publish-date:after { content: ": "; }
+.articles .abstract { 
+  margin-top: 5px; 
+  color: #555;
 }
-.rmhdev-footer-extra { float: right; display: inline-block; }
-.rmhdev-footer-author { float: left; display: inline-block; }
-dl.rmhdev-contact-list {}
-dl.rmhdev-contact-list dt { }
-dl.rmhdev-contact-list dd { display: block; width: 100%; clear: both; }
-dl.rmhdev-contact-list dd:before {
-  content: '\2014 \00A0';
+.articles h2 { 
+  line-height: 24px;
+  padding: 1px 3px 5px;
+  display: inline; 
+  font-size: 110%; 
 }
+.article-page .header { text-align: center; margin: 0; }
+.article-page .article-content { margin-top: 20px; }
+
+.column, .columns { margin-top: 20px; }
+.box { 
+    background-color: #ffffff; 
+    border: 1px solid #dddddd; 
+    margin: 0; 
+    padding: 10px; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    *zoom: 1;
+
+}
+
+
+.navbar {
+  overflow: visible;
+  margin-bottom: 10px;
+  *position: relative;
+  *z-index: 2;
+}
+.navbar-inner {
+  min-height: 40px;
+  background-color: #666666;
+  *zoom: 1;
+}
+.navbar-inner:before,
+.navbar-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.navbar-inner:after {
+  clear: both;
+}
+.navbar .brand {
+  float: left;
+  display: block;
+  padding: 8px 20px 8px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.navbar a.brand {
+  text-decoration: none;
+}
+.navbar a.brand:hover {
+  text-decoration: underline;
+}
+
+.navbar .nav {
+  position: relative;
+  right: 0;
+  display: inline;
+  float: right;
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+.navbar .nav > li {
+  float: left;
+  padding: 10px 1px;
+  margin: 0;
+  line-height: 20px;
+}
+.navbar .nav > li > a {
+  float: none;
+  padding: 10px 15px 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #555555;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #555555;
+  text-decoration: none;
+  background-color: #c0c0c0;
+}
+
+
+
+/* Code */
+pre, code, kbd, samp, tt {
+  font-family: monospace;
+  line-height: 99%;
+}
+pre {
+  padding: 0.7em;
+  margin: 1em 0;
+  background-color: #333333;
+  color: #eeeeee;
+  overflow-x: auto;
+  overflow-y: auto;
+  line-height: 1.3em;
+  font-size: 100%;
+}
+
+
 
 /* #Page Styles
 ================================================== */
 
+
+/* post */ 
+
+.icon {
+  background-image: url("images/avatar.jpg"); /* png */
+  background-repeat: no-repeat;
+}
+
+.icon-avatar {
+  background-size: 75px 75px;
+  width: 66px;
+  height: 66px;
+  /*background-position: -32px -128px;*/
+  background-position: -5px 0;
+
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
+
+  -webkit-border-radius: 33px;
+  -moz-border-radius: 33px;
+  border-radius: 33px;
+}
+
+
 /* #Media Queries
 ================================================== */
 
-	/* Smaller than standard 960 (devices and browsers) */
-	@media only screen and (max-width: 959px) {}
+    /* Smaller than standard 960 (devices and browsers) */
+    @media only screen and (max-width: 959px) {}
 
-	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+    /* Tablet Portrait size to standard 960 (devices and browsers) */
+    @media only screen and (min-width: 768px) and (max-width: 959px) {}
 
-	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {
-		.rmhdev-header { margin-bottom: 10px; }
-		.rmhdev-footer { margin-top: 30px; }
-	}
+    /* All Mobile Sizes (devices and browser) */
+    @media only screen and (max-width: 767px) {
+        .header { margin-bottom: 10px; }
+        .footer { 
+      margin-top: 30px; 
+      text-align: center;
+    }
+    .footer-author { float: none; clear: right; }
 
-	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-	@media only screen and (min-width: 480px) and (max-width: 767px) {
-		.rmhdev-footer-extra { float: right; display: inline-block; }
-	}
+    .container .columns,
+      .container .column { margin: 5px 0; } 
+    .articles .publish-date, 
+      .articles .abstract { display: none; }
+    
+    .articles h2 { 
+      display: block;
+    }
+    .articles a { 
+      display: block;
+      text-decoration: none;
+      padding: 9px 6px;
+      background-color: #666666;
+      color: #ffffff;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .articles a:hover, .articles a:focus { 
+      background-color: #555555;
+    }
 
-	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 479px) {
-		.rmhdev-footer-extra { float: none; clear: both;}
-	}
+    .box-about {
+      text-align: center;
+    }
+    
+    .icon {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        clear: both;
+    }
+
+    p.lead { font-size: 16px; }
+    }
+
+    /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      .container { width: 470px; }
+      .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 470px; }
+
+      .footer-extra { float: none; display: inline-block; margin-left: 30px; }
+  }
+
+    /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+    @media only screen and (max-width: 479px) {
+      .container { width: 350px; }
+      .container .sixteen.columns,
+        .container .one-third.column,
+        .container .two-thirds.column  { width: 350px; }
+
+      .footer-extra { float: none; display: inline-block; }
+    }
 
 
 /* #Font-Face
 ================================================== */
-/* 	This is the proper syntax for an @font-face file
-		Just create a "fonts" folder at the root,
-		copy your FontName into code below and remove
-		comment brackets */
+/*  This is the proper syntax for an @font-face file
+        Just create a "fonts" folder at the root,
+        copy your FontName into code below and remove
+        comment brackets */
 
-/*	@font-face {
-	    font-family: 'FontName';
-	    src: url('../fonts/FontName.eot');
-	    src: url('../fonts/FontName.eot?iefix') format('eot'),
-	         url('../fonts/FontName.woff') format('woff'),
-	         url('../fonts/FontName.ttf') format('truetype'),
-	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
-	    font-weight: normal;
-	    font-style: normal; }
+/*  @font-face {
+        font-family: 'FontName';
+        src: url('../fonts/FontName.eot');
+        src: url('../fonts/FontName.eot?iefix') format('eot'),
+             url('../fonts/FontName.woff') format('woff'),
+             url('../fonts/FontName.ttf') format('truetype'),
+             url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+        font-weight: normal;
+        font-style: normal; }
 */
+
+
+/* #Syntax highlighting
+================================================== */
+/*  based on Pygments. */
+
+.highlight { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */

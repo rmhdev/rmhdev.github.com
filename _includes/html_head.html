@@ -1,0 +1,29 @@
+<!--[if lt IE7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    {% capture creator %}{{ site.author.name }} ({{ site.author.twitter }}){% endcapture %}
+    {% case page.type %}
+    {% when 'article' %}
+    <title>{{ page.title }} | {{ creator }}</title>
+    <meta name="description" content="{{ page.abstract }}">
+    {% when 'about' %}
+    <title>{{ page.title }} | {{ creator }}</title>
+    <meta name="description" content="{{ site.description }}">
+    {% else %}
+    <title>{{ creator }}</title>
+    <meta name="description" content="{{ site.description }}">
+    {% endcase %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/layout.css">
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
