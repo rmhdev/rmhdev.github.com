@@ -6,8 +6,7 @@ layout: home
                         <header class="header">
                             <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                             <small class="publish-date">
-                                <time datetime="{{ post.date | date_to_string }}" pubdate="pubdate">{{ post.date | date_to_string }}</time>
-                            </small>
+                                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate="pubdate">{{ post.date | date_to_string }}</time></small>
                         </header>
                         <div class="abstract">
                             <p>{{ post.abstract }}</p>

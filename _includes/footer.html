@@ -1,9 +1,11 @@
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="sixteen columns footer">
+            <div class="sixteen columns">
                 <div class="box">
-                    <span class="footer-author">{{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
-                    <span class="footer-extra">Handmade using <a href="https://github.com/mojombo/jekyll/">jekyll</a> + <a href="http://getskeleton.com">skeleton</a></span>
+                    <span class="footer-author">Created by {{ site.author.name }}.
+<a rel="license" href="{{ site.license.url }}"><img alt="{{ site.license.name }}" src="{{ site.license.logo }}" width=80 height=15 /></a>
+                    </span>
+                    <span class="footer-extra">Handmade using <a href="{{ site.tools.jekyll }}">Jekyll</a> + <a href="{{ site.tools.skeleton }}">Skeleton</a>.</span>
                 </div>
             </div>
         </div>

@@ -1,19 +1,33 @@
 markdown: rdiscount
 pygments: true
 
-description: "Rober Martín H, developer from Donostia/San Sebastián"
+description: "Software developer always learning how to improve things. I mostly code in PHP and Javascript. Actually living and working in Donostia/San Sebastián."
 
-author :
-  name : Rober Martín H
-  github : rmhdev
-  twitter : rmhdev
-  email_pro: "rober (at) rmhdev.net"
-  email_personal: "rmhdev (at) gmail.com"
-  location: Donostia/San Sebastián
+license:
+  name: "Creative Commons Attribution-Share Alike 3.0 Unported"
+  url:  http://creativecommons.org/licenses/by-sa/3.0/
+  logo: "/images/cc-by-sa-3-80x15.png"
 
-production_url : http://rmhdev.net
+tools:
+  jekyll:   https://github.com/mojombo/jekyll/
+  skeleton: http://getskeleton.com
 
-analytics :
-  enabled : false
-  google : 
-      tracking_id : 'UA-22011276-1'
+author:
+  name:             "Rober Martín H"
+  github:           rmhdev
+  twitter:          rmhdev
+  linkedin:         rmhdev
+  email_pro:        "rober(at)rmhdev.net"
+  email_personal:   "rmhdev(at)gmail.com"
+  location:         "Donostia/San Sebastián"
+
+production_url: http://rmhdev.net
+
+repository:
+  fork_me:        https://github.com/rmhdev/rmhdev.github.com
+  posts_folder:   /tree/master/_posts/
+
+analytics:
+  enabled:  false
+  google: 
+    tracking_id:  'UA-22011276-1'

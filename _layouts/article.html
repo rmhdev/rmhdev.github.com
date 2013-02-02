@@ -2,6 +2,7 @@
 layout: default
 type: article
 ---
+                <section class="sixteen columns">
                     <div class="box article article-page">
 
                         <header class="header">
@@ -14,4 +15,9 @@ type: article
                         <div class="article-content">
 {{ content }}
                         </div>
+
+                        <footer class="feedback">
+                            <p>Do you have any comments for this article? Improvements maybe? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}">fork this site</a> too. Thanks!</p>
+                        </footer>
                     </div>
+                </section>
