@@ -263,10 +263,10 @@ pre {
 
     /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
     @media only screen and (max-width: 479px) {
-      .container { width: 350px; }
+      .container { width: 300px; }
       .container .sixteen.columns,
         .container .one-third.column,
-        .container .two-thirds.column  { width: 350px; }
+        .container .two-thirds.column  { width: 300px; }
 
       .footer-extra { float: none; display: inline-block; }
     }
