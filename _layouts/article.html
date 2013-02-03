@@ -8,7 +8,7 @@ type: article
                         <header class="header">
                             <h1>{{ page.title }}</h1>
                             <small class="publish-date">
-                                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate="pubdate">{{ page.date | date_to_long_string }}</time>
+                                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate>{{ page.date | date_to_long_string }}</time>
                             </small>
                         </header>
 
@@ -17,7 +17,7 @@ type: article
                         </div>
 
                         <footer class="feedback">
-                            <p>Do you have any comments for this article? Improvements maybe? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}">fork this site</a> too. Thanks!</p>
+                            <p>Do you have any comments for this article? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}">fork this site</a> and send a pull request. Thanks!</p>
                         </footer>
                     </div>
                 </section>

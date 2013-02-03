@@ -40,8 +40,8 @@ h3 { font-size: 110%; }
 
 small.publish-date { font-size: 100%; }
 .publish-date { font-family: monospace; }
-.articles .publish-date { color: #aaa; float: left; padding-top: 2px;}
-.articles .publish-date:after { content: ": "; }
+.articles .publish-date { color: #999999; float: left; padding-top: 2px;}
+.articles .publish-date:after { content: "\00A0\00BB\00A0"; }
 .articles .abstract { 
   margin-top: 5px; 
   color: #555;
@@ -101,16 +101,18 @@ small.publish-date { font-size: 100%; }
 .navbar .brand {
   float: left;
   display: block;
-  padding: 8px 20px 8px 10px;
+  padding: 8px 10px 10px 10px;
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
+  margin: 0;
+  text-decoration: none;
 }
 .navbar a.brand {
   text-decoration: none;
 }
-.navbar a.brand:hover {
-  text-decoration: underline;
+.navbar a.brand:hover, .navbar a.brand:focus {
+  background-color: #555555;
 }
 
 .navbar .nav {

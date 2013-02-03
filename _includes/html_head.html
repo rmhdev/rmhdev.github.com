@@ -1,7 +1,4 @@
-<!--[if lt IE7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="utf-8">
     {% capture creator %}{{ site.author.name }} ({{ site.author.twitter }}){% endcapture %}
@@ -18,12 +15,11 @@
     {% endcase %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="content-language" content="en">
 
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/skeleton.css">
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="alternate" href="/atom.xml" title="{{ site.author.name }} ({{ site.author.twitter }})" type="application/atom+xml">
+    <link rel="alternate" href="/index.atom" type="application/atom+xml" title="{{ creator }})">
 
     <link rel="apple-touch-icon" href="/touchicon.png">
     <link rel="icon" href="/favicon.png">
