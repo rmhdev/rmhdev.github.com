@@ -28,6 +28,6 @@ repository:
   posts_folder:   /tree/master/_posts/
 
 analytics:
-  enabled:  false
+  enabled:  true
   google: 
     tracking_id:  'UA-22011276-1'
