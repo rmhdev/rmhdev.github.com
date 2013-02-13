@@ -3,7 +3,7 @@ layout: about
 title: About me
 ---
 
-Hi, my name is **Rober Martín H**. I was born in **1980** and, when i'm not traveling or riding my bike, i code stuff. I started in the development world in **2006**, after completing my computer engineering studies. Now i'm currently living and working in **Donostia/San Sebastián**.
+Hi, my name is **Rober Martín H**. I was born in **1980** and, when I'm not traveling or riding my bike, I code stuff. I started in the development world in **2006**, after completing my computer engineering studies. Now I'm currently living and working in **Donostia/San Sebastián**.
 
 ## Skills
 
