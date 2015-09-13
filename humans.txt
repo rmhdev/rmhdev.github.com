@@ -1,5 +1,4 @@
 ---
-layout: nil
 # http://humanstxt.org/
 ---
 
@@ -14,4 +13,3 @@ layout: nil
   Standards: HTML5, CSS3
   Components: Skeleton
   Software: Jekyll
-  IDE: Sublime 2, Vim
