@@ -1,295 +1,39 @@
-/*
-* Skeleton V1.1
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 8/17/2011
-* Edited by rmhdev
-*/
-
-/* Table of Content
-==================================================
-    #Site Styles
-    #Page Styles
-    #Media Queries
-    #Font-Face
-  #Syntax Highlighting */
-
-/* #Site Styles
-================================================== */
-html, body {
-  background-color: #eee; 
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-body { 
-  margin-top: 0; 
-}
-p.lead { font-size: 19px; }
+h1 { font-size: 3.6rem; line-height: 1.25;  letter-spacing: -.1rem; font-weight: bold; }
+h2 { font-size: 3.0rem; line-height: 1.3; letter-spacing: -.1rem; }
+h3 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
 
-h1 { 
-  font-size: 160%; 
-  text-align: center; 
-  margin: -10px -10px 0;
-  padding: 10px;
+.rmh-homepage {
+    margin-top: 10rem;
+    text-align: center;
 }
-h2 { font-size: 130%; }
-h3 { font-size: 110%; }
-
-.footer { margin-bottom: 20px; font-size: 90%; }
-.footer-extra { float: right; display: inline; clear: right; }
-
-small.publish-date { font-size: 100%; }
-.publish-date { font-family: monospace; }
-.articles .publish-date { color: #999999; float: left; padding-top: 2px;}
-.articles .publish-date:after { content: "\00A0\00BB\00A0"; }
-.articles .abstract { 
-  margin-top: 5px; 
-  color: #555;
+.rmh-homepage h1 {
+    margin-bottom: 1rem;
 }
-.articles h2 { 
-  line-height: 24px;
-  padding: 1px 3px 5px;
-  display: inline; 
-  font-size: 110%; 
+.rmh-homepage p.lead {
+    font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem;
 }
-.article-page .header { text-align: center; margin: 0; }
-.article-page .article-content { margin-top: 20px; }
-
-.feedback { 
-  margin: 30px -10px 0;
-  padding: 20px 10px 0;
-  border-top: 1px dotted #ccc; 
-  font-style: italic;
+.rmh-homepage .button {
+    text-transform: none;
 }
 
-.column, .columns { margin-top: 20px; }
-.box { 
-    background-color: #ffffff; 
-    border: 1px solid #dddddd; 
-    margin: 0; 
-    padding: 10px; 
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-    *zoom: 1;
-}
-
-
-.navbar {
-  overflow: visible;
-  margin-bottom: 10px;
-  *position: relative;
-  *z-index: 2;
-}
-.navbar-inner {
-  min-height: 40px;
-  background-color: #666666;
-  *zoom: 1;
-}
-.navbar-inner:before,
-.navbar-inner:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.navbar-inner:after {
-  clear: both;
-}
-.navbar .brand {
-  float: left;
-  display: block;
-  padding: 8px 10px 10px 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  margin: 0;
-  text-decoration: none;
-}
-.navbar a.brand {
-  text-decoration: none;
-}
-.navbar a.brand:hover, .navbar a.brand:focus {
-  background-color: #555555;
-}
-
-.navbar .nav {
-  position: relative;
-  right: 0;
-  display: inline;
-  float: right;
-  margin: 0;
-  padding: 0;
-  text-transform: lowercase;
-}
-.navbar .nav > li {
-  float: left;
-  padding: 10px 1px;
-  margin: 0;
-  line-height: 20px;
-}
-.navbar .nav > li > a {
-  float: none;
-  padding: 10px 15px 10px;
-  color: #ffffff;
-  text-decoration: none;
-}
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: #555555;
-}
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
-  color: #555555;
-  text-decoration: none;
-  background-color: #c0c0c0;
-}
-
-
-
-/* Code */
-pre, code, kbd, samp, tt {
-  font-family: monospace;
-  line-height: 99%;
-}
-pre {
-  padding: 0.7em;
-  margin: 1em 0;
-  background-color: #333333;
-  color: #eeeeee;
-  overflow-x: auto;
-  overflow-y: auto;
-  line-height: 1.3em;
-  font-size: 100%;
-}
-
-
-
-/* #Page Styles
-================================================== */
-
-
-/* post */ 
-
-.icon {
-  /*background-image: url("images/avatar.jpg");*/
-  background-repeat: no-repeat;
-}
-
-.icon-avatar {
-  background-size: 75px 75px;
-  width: 66px;
-  height: 66px;
-  /*background-position: -32px -128px;*/
-  background-position: -5px 0;
-
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
-  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.30);
-
-  -webkit-border-radius: 33px;
-  -moz-border-radius: 33px;
-  border-radius: 33px;
-}
-
-
-/* #Media Queries
-================================================== */
-
-    /* Smaller than standard 960 (devices and browsers) */
-    @media only screen and (max-width: 959px) {}
-
-    /* Tablet Portrait size to standard 960 (devices and browsers) */
-    @media only screen and (min-width: 768px) and (max-width: 959px) {}
-
-    /* All Mobile Sizes (devices and browser) */
-    @media only screen and (max-width: 767px) {
-      .header { margin-bottom: 10px; }
-      .footer { 
-        text-align: center;
-      }
-      .footer-author { float: none; clear: right; }
-
-      .container .columns,
-        .container .column { margin: 5px 0; } 
-      .articles .publish-date, 
-        .articles .abstract { display: none; }
-      
-      .articles h2 { 
-        display: block;
-      }
-      .articles a { 
-        display: block;
-        text-decoration: none;
-        padding: 9px 6px;
-        background-color: #666666;
-        color: #ffffff;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-      }
-      .articles a:hover, .articles a:focus { 
-        background-color: #555555;
-      }
-
-      .box-about {
-        text-align: center;
-      }
-      
-      .icon {
-          display: block;
-          margin: 0 auto;
-          text-align: center;
-          clear: both;
-      }
-
-      p.lead { font-size: 16px; }
+@media (max-width: 549px) {
+    .rmh-homepage {
+        margin-top: 5rem;
     }
+}
+.rmh-homepage p.lead {
 
-    /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
-      .container { width: 470px; }
-      .container .sixteen.columns,
-        .container .one-third.column,
-        .container .two-thirds.column  { width: 470px; }
-
-      .footer-extra { float: none; display: inline-block; margin-left: 30px; }
-    }
-
-    /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-    @media only screen and (max-width: 479px) {
-      .container { width: 300px; }
-      .container .sixteen.columns,
-        .container .one-third.column,
-        .container .two-thirds.column  { width: 300px; }
-
-      .footer-extra { float: none; display: inline-block; }
-    }
-
-
-/* #Font-Face
-================================================== */
-/*  This is the proper syntax for an @font-face file
-        Just create a "fonts" folder at the root,
-        copy your FontName into code below and remove
-        comment brackets */
-
-/*  @font-face {
-        font-family: 'FontName';
-        src: url('../fonts/FontName.eot');
-        src: url('../fonts/FontName.eot?iefix') format('eot'),
-             url('../fonts/FontName.woff') format('woff'),
-             url('../fonts/FontName.ttf') format('truetype'),
-             url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
-        font-weight: normal;
-        font-style: normal; }
-*/
-
+}
+ul.rmh-contact {
+    list-style: none;
+}
+ul.rmh-contact li {
+    list-style: none;
+    display: inline-block;
+}
 
 /* #Syntax highlighting
 ================================================== */
