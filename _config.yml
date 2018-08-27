@@ -1,7 +1,7 @@
 markdown: rdiscount
 highlighter: pygments
 
-title: "Lorem Ipsum"
+title: "Rober Martín H"
 description: "Software developer from Donostia/San Sebastián"
 date_format: "%B %d, %Y"
 permalink: :year/:month/:day/:title:output_ext
@@ -17,7 +17,7 @@ tools:
   skeleton: http://getskeleton.com
 
 author:
-  name:             "ASga ASoas asasdo"
+  name:             "Rober Martín H"
   github:           rmhdev
   twitter:          rmhdev
   linkedin:         rmhdev
