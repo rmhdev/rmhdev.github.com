@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang }}">
 {% include html_head.html %}
-<body>
+<body class="{{ page.type }}">
 
-    <section class="rmh-content rmh-content-{{ page.type }}">
-        <div class="container">
-        {{ content }}
-        </div>
-    </section>
+    {{ content }}
+
+    <footer class="footer">
+        {% include footer.html %}
+    </footer>
 
 {% include html_foot.html %}
 </body>

@@ -1,12 +1,7 @@
-    <footer class="footer">
-        <div class="container">
-            <div class="twelve columns">
-                <div class="box">
-                    <span class="footer-author">Created by {{ site.author.name }}.
-<a rel="license" href="{{ site.license.url }}"><img alt="{{ site.license.name }}" src="{{ site.license.logo }}" width=80 height=15 /></a>
-                    </span>
-                    <span class="footer-extra">Handmade using <a href="{{ site.tools.jekyll }}">Jekyll</a> + <a href="{{ site.tools.skeleton }}">Skeleton</a>.</span>
-                </div>
-            </div>
-        </div>
-    </footer>
+<div class="container">
+    <section class="content">
+        <p class="links">
+            <a rel="license" href="{{ site.license.url }}" title="{{ site.license.name }}">{{ site.license.alias }}</a> <span class="author">{{ site.time | date: "%Y" }} <a href="{% link about.md %}">{{ site.author.name }}</span></a>
+        </p>
+    </section>
+</div>

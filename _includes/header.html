@@ -1,9 +1,9 @@
     <header class="navbar">
         <nav class="navbar-inner">
             <div class="container">
-                <a class="brand" href="/">{{ site.author.twitter }}</a>
+                <a class="brand" href="{{ '' | absolute_url }}">{{ site.author.twitter }}</a>
                 <ul class="nav">
-                    <li class="{% case page.type %}{% when 'about' %}active{% endcase %}"><a href="/about.html">About</a></li>
+                    <li class="{% case page.type %}{% when 'about' %}active{% endcase %}"><a href="{{ 'about' | absolute_url }}">About</a></li>
                 </ul>
             </div>  
         </nav>

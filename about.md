@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: page
 title: About me
 ---
 
@@ -15,11 +15,11 @@ I tweet from [@rmhdev][twitter]. You can find me in [LinkedIn][linkendin] too. F
 
 ## This site
 
-I've built this little corner of the interwebs using [Jekyll][jekyll], a static site generator. The general style of the web is based on [Skeleton][skeleton], a responsive boilerplate. The page is hosted on [GitHub Pages][github_pages]; you can [fork the code][fork_me].
+The page is hosted on [GitHub Pages][github_pages]; you can [fork the code][fork_me].
 
 ## License
 
-Except where otherwise noted, content on this site is licensed under a {{ site.license.name }} [License][license].
+Except where otherwise noted, content on this site is licensed under a  [{{ site.license.name }}][license].
 
 
 [linkendin]: http://linkedin.com/in/{{ site.author.linkedin }}/

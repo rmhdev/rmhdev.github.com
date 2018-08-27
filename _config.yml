@@ -1,19 +1,23 @@
 markdown: rdiscount
 highlighter: pygments
 
+title: "Lorem Ipsum"
 description: "Software developer from Donostia/San Sebastián"
+date_format: "%B %d, %Y"
+permalink: :year/:month/:day/:title:output_ext
+lang: "en"
 
 license:
-  name: "Creative Commons Attribution-Share Alike 3.0 Unported"
-  url:  http://creativecommons.org/licenses/by-sa/3.0/
-  logo: "/images/cc-by-sa-3-80x15.png"
-
+  name: "Creative Commons Attribution-ShareAlike 4.0 International License"
+  alias: "CC BY-SA 4.0"
+  url:  http://creativecommons.org/licenses/by-sa/4.0/
+  logo: "https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
 tools:
   jekyll:   https://github.com/mojombo/jekyll/
   skeleton: http://getskeleton.com
 
 author:
-  name:             "Rober Martín H"
+  name:             "ASga ASoas asasdo"
   github:           rmhdev
   twitter:          rmhdev
   linkedin:         rmhdev

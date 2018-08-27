@@ -1,0 +1,35 @@
+// Spacing
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button,
+button,
+dd,
+dt,
+figure,
+li {
+  margin-bottom: 1.0rem
+}
+figure.highlight pre {
+  margin: 0;
+}
+
+fieldset,
+input,
+select,
+textarea {
+  margin-bottom: 1.5rem
+}
+
+blockquote,
+dl,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  margin-bottom: 2.5rem
+}
+pre {
+  overflow-y: scroll;
+}

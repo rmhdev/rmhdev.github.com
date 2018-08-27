@@ -2,18 +2,17 @@
 layout: default
 type: home
 ---
-    <header class="rmh-homepage">
-            <h1>{{ site.author.name }}</h1>
-            <p class="lead">{{ site.description }}</p>
-
-            <ul class="rmh-contact">
-                <li><a class="button rmh-twitter" href="https://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a></li>
-                <li><a class="button rmh-github" href="https://github.com/{{ site.author.github }}">GitHub profile</a></li>
-            </ul>
-    </header>
-{% if site.posts.size > 0 %}
-            <section class="rmh-articles">
-                <h1>Articles</h1>
-{{ content }}
-            </section>
-{% endif %}
+<header>
+    <div class="container">
+        <h1>{{ site.author.name }}</h1>
+        <p class="">{{ site.description }}</p>
+    </div>
+</header>
+{%- if site.posts.size > 0 -%}
+<main class="articles">
+    <div class="container">
+        <h2>Articles</h2>
+{{- content -}}
+        </div>
+</main>
+{%- endif -%}

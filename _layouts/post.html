@@ -1,0 +1,35 @@
+---
+layout: default
+type: article
+---
+<nav class="post">
+    <div class="container">
+        <a class="author" href="{{ '' | absolute_url }}">{{ site.author.name }}</a>
+    </div>
+</nav>
+
+{%- assign date_format = site.date_format | default: "%b %d, %Y" -%}
+<main class="post">
+    <div class="container">
+        <article>
+            <header class="header">
+                <h1 class="title">{{ page.title }}</h1>
+                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate>{{ page.date | date: date_format }}</time>
+                <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><span class="sr-only sr-only-focusable">permalink</span><span class="symbol" aria-hidden="true"></span></a>
+            </header>
+
+            <div class="content">
+                <span class="separator top" aria-hidden="true"></span>
+            {{- content -}}
+                <span class="separator bottom" aria-hidden="true"></span>
+            </div>
+
+            <footer class="feedback">
+                <p>Do you have any comments for this article? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}/{{ page.path }}"> fork this post</a> and send a pull request. Thanks!
+{% comment %}
+                    This post is licensed under a <a rel="license" href="{{ site.license.url }}">{{ site.license.name }} License</a>.</p>
+{% endcomment %}
+            </footer>
+        </article>
+    </div>
+</main>

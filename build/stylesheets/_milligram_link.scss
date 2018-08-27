@@ -1,0 +1,12 @@
+// Link
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    color: $color-secondary;
+  }
+}
