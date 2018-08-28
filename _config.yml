@@ -1,4 +1,3 @@
-markdown: rdiscount
 highlighter: pygments
 
 title: "Rober Martín H"
@@ -25,7 +24,7 @@ author:
   email_personal:   "rmhdev(at)gmail.com"
   location:         "Donostia/San Sebastián"
 
-production_url: http://rmhdev.net
+production_url: https://rmhdev.net
 
 repository:
   fork_me:        https://github.com/rmhdev/rmhdev.github.com

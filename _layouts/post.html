@@ -10,26 +10,39 @@ type: article
 
 {%- assign date_format = site.date_format | default: "%b %d, %Y" -%}
 <main class="post">
-    <div class="container">
-        <article>
-            <header class="header">
+    <article>
+        <header class="header">
+            <div class="container">
                 <h1 class="title">{{ page.title }}</h1>
-                <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate>{{ page.date | date: date_format }}</time>
-                <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><span class="sr-only sr-only-focusable">permalink</span><span class="symbol" aria-hidden="true"></span></a>
-            </header>
+                <div class="subtitle">
+                    <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate>{{ page.date | date: date_format }}</time>
+                    <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><span class="sr-only sr-only-focusable">permalink</span><span class="symbol" aria-hidden="true"></span></a>
+                </div>
+            </div>
+{% comment %}
+            <div class="header-image">
+                <div class="container">
+                    <figure>
+                        <img src="/images/800x600.png" class="img-fluid">
+                        <figcaption>Lorem ipsum</figcaption>
+                    </figure>
+                </div>
+            </div>
+{% endcomment %}
+        </header>
 
-            <div class="content">
+        <div class="content">
+            <div class="container">
                 <span class="separator top" aria-hidden="true"></span>
             {{- content -}}
                 <span class="separator bottom" aria-hidden="true"></span>
             </div>
+        </div>
 
-            <footer class="feedback">
-                <p>Do you have any comments for this article? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}/{{ page.path }}"> fork this post</a> and send a pull request. Thanks!
-{% comment %}
-                    This post is licensed under a <a rel="license" href="{{ site.license.url }}">{{ site.license.name }} License</a>.</p>
-{% endcomment %}
-            </footer>
-        </article>
-    </div>
+        <footer class="feedback">
+            <div class="container">
+                <p>Do you have any comments for this article? Please tweet me at <a href="http://twitter.com/{{ site.author.twitter }}" rel="me">@{{ site.author.twitter }}</a>. Remember that you can <a href="{{ site.repository.fork_me }}/{{ page.path }}"> fork this post</a> and send a pull request. Thanks!</p>
+            </div>
+        </footer>
+    </article>
 </main>

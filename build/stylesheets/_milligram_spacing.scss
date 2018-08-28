@@ -33,3 +33,14 @@ ul {
 pre {
   overflow-y: scroll;
 }
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+figcaption {
+  padding: 0 1rem !important;
+  text-align: right;
+  color: $color-tertiary;
+  font-size: 1.2rem;
+}
