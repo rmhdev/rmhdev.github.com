@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "milligram": "^1.3.0",
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "normalize.css": "^8.0.0"
   },
   "scripts": {
     "sass": "node-sass -w build/stylesheets/ -o css/",

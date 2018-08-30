@@ -1,5 +1,7 @@
 @import "variables";
 
+@import "../../node_modules/normalize.css/normalize";
+
 @import "../../node_modules/milligram/src/Color";
 //@import "../../node_modules/milligram/src/Base";
 @import "milligram_base";
@@ -14,13 +16,18 @@
 @import "../../node_modules/milligram/src/List";
 //@import "../../node_modules/milligram/src/Spacing";
 @import "milligram_spacing";
-@import "../../node_modules/milligram/src/Table";
+//@import "../../node_modules/milligram/src/Table";
+@import "milligram_table";
 //@import "../../node_modules/milligram/src/Typography";
 @import "milligram_typography";
 //@import "../../node_modules/milligram/src/Image";
 @import "../../node_modules/milligram/src/Utility";
 
 @import "highlight";
+.highlighter-rouge {
+  color: #e83e8c;
+  word-break: break-word;
+}
 
 
 body {
@@ -91,11 +98,6 @@ main.post {
   .content {
     margin-bottom: $margin-bottom;
 
-    @media (min-width: 40.0rem) {
-      p {
-        text-indent: $margin-bottom;
-      }
-    }
     .separator.bottom {
       margin: 0 auto;
       display: block;
@@ -105,6 +107,11 @@ main.post {
       &::before {
         content: "☙";
       }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
   }
 
@@ -116,7 +123,8 @@ main.post {
 figure.highlight {
   margin: 0 0 $margin-bottom 0;
   padding: 1rem !important;
-  background-color: #eee;
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
 
   @media (max-width: 40.0rem) {
     margin-left: -1rem;
