@@ -2,7 +2,7 @@
 layout:     post
 title:      "Welcome to Jekyll!"
 date:       2018-08-25 17:01:30 +0700
-categories: jekyll update
+categories: posts
 abstract:   "Lorem ipsum dolor sit amet"
 published:  false
 ---

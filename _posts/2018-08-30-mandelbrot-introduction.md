@@ -2,7 +2,7 @@
 layout:     post
 title:      "The Mandelbrot set, step by step (1): introduction"
 date:       2018-08-30 07:00:00 +0700
-categories: mandelbrot introduction golang
+categories: posts
 abstract:   "First of a series of posts where I develop step by step an app in Golang that displays the Mandelbrot set."
 published:  true
 ---

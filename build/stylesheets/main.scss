@@ -41,10 +41,20 @@ body > main {
 
 
 body.home > main.articles {
-  article header time {
-    color: $color-tertiary;
+  article time.published-at {
+    color: $color-secondary;
+    font-style: italic;
+    display: block;
+    white-space: nowrap;
+    @media (min-width: 40.0rem) {
+      float: right;
+      display: inline;
+      margin-left: $margin-bottom;
+    }
+
+
     &::after {
-      content: ":";
+      content: "";
     }
   }
 }
@@ -105,7 +115,7 @@ main.post {
       height: 5.0rem;
       font-size: 3.0rem;
       &::before {
-        content: "☙";
+        content: "\2619"; // REVERSED ROTATED FLORAL HEART BULLET
       }
     }
 
@@ -122,13 +132,15 @@ main.post {
 
 figure.highlight {
   margin: 0 0 $margin-bottom 0;
-  padding: 1rem !important;
+  padding: 1rem 1.5rem !important;
   background-color: #fcfcfc;
   border: 1px solid #eee;
 
   @media (max-width: 40.0rem) {
     margin-left: -1rem;
     margin-right: -1rem;
+    border-left: none;
+    border-right: none;
   }
 }
 

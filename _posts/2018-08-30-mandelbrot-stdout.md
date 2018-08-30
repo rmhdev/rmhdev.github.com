@@ -2,7 +2,7 @@
 layout:     post
 title:      "The Mandelbrot set, step by step (2): introduction"
 date:       2018-08-30 00:10:00 +0500
-categories: mandelbrot golang stdout terminal
+categories: posts
 abstract:   "In this post I will develop an app in Golang that displays the Mandelbrot set in the terminal"
 published:  false
 ---

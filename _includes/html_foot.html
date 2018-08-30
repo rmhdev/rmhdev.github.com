@@ -1,15 +1,36 @@
-{% if site.analytics.enabled %}
-<!--
-    <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
-          _gaq.push(['_trackPageview']);
+{% assign show_analytics = (jekyll.environment == "production") and (site.analytics.enabled) %}
+{% if !show_analytics %}
+<!--  disabled!
+{% endif %}
+<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
+      _gaq.push(['_trackPageview']);
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-    </script>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+</script>
+{% if !show_analytics %}
 -->
 {% endif %}
+
+{% comment %}
+<!--
+<script>
+    if ('serviceWorker' in navigator) {
+        console.log("Will service worker register?");
+        navigator.serviceWorker.register('/js/service-worker.js?id=' + "{{ site.time | date: '%s' }}").then(function(reg){
+            console.log(reg);
+            console.log("Yes it did.");
+        }).catch(function(err) {
+            console.log("No it didn't. This happened: ", err)
+        });
+    }
+</script>
+-->
+{% endcomment %}
+
+<!-- version: "{{ site.time | date: '%c' }}" -->

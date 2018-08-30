@@ -2,8 +2,9 @@
 title: "Rober Martín H"
 description: "Software developer from Donostia/San Sebastián"
 date_format: "%B %d, %Y"
-permalink: :year/:month/:day/:title:output_ext
+permalink: "pretty"
 lang: "en"
+exclude: ['node_modules', "README.md", "package.json", "*.lock", ".idea", "Gemfile", "build", "assets"]
 
 license:
   name: "Creative Commons Attribution-ShareAlike 4.0 International License"
