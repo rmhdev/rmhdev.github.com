@@ -1,5 +1,4 @@
-{% assign show_analytics = (jekyll.environment == "production") and (site.analytics.enabled) %}
-{% if !show_analytics %}
+{% if (jekyll.environment != "production") or (!site.analytics.enabled) %}
 <!--  disabled!
 {% endif %}
 <script type="text/javascript">
@@ -13,7 +12,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 </script>
-{% if !show_analytics %}
+{% if (jekyll.environment != "production") or (!site.analytics.enabled) %}
 -->
 {% endif %}
 
