@@ -9,12 +9,12 @@ published:  true
 
 During a trip back in July'18 I started learning the Go programming language by taking 
 [the official tour of Go][a-tour-of-go]. Although I had never tried it, it only took me a couple of days to
-start feeling comfortable with it's syntax and tools. Putting into practice what I was learning was the next 
-natural step, so I decided to develop an app that generates images of the famous Mandelbrot set. 
-Building it has been an interesting process, I hope you enjoy it as much as I did!
+start feeling comfortable with its syntax and tools. That's why I decided to put into practice what I was 
+learning by building a basic pet project that generates images of the Mandelbrot set. 
+It's been an interesting process, I hope you enjoy it as much as I did!
 
 
-## What is the Mandelbrot set? {#mandelbrot}
+## What is the Mandelbrot set? {#definition}
 
 Let’s read the [formal definition on the Wikipedia][wikipedia-mandelbrot]:
 
@@ -33,7 +33,8 @@ Let's analyze this definition:
 
 ### 1. It's a set of values in the complex plane
 
-The complex numbers are numbers like `(1.2 + 0.5i)`, which have a real part (`1.2`) and an imaginary part (`0.5i`). 
+The complex numbers are numbers like `(1.2 + 0.5i)`, which have a real part (`1.2`), an imaginary part (`0.5i`) 
+and where `i` is the square root of -1. 
 Because there are infinite complex numbers, when representing the Mandelbrot set we will have to 
 **select a sample** of them and check if they are part of the Mandelbrot set by applying the function seen above. 
 
@@ -48,7 +49,7 @@ To simplify things we will use integer numbers, even though the mandelbrot set u
 
 |            | `n=0` | `n=1`  | `n=2` | `n=3` | `n=4` | `n=5` | `n=big`     |
 | ---------- | -----:| ------:| -----:| -----:| -----:| -----:| -----------:|
-| **`c=1`**  | `0`   | `1`    | `2`   | `5`   | `26`  | `677` | bigger!     |
+| **`c=1`**  | `0`   | `1`    | `2`   | `5`   | `26`  | `677` | huge!       |
 | **`c=0`**  | `0`   | `0`    | `0`   | `0`   | `0`   | `0`   | `0`         |
 | **`c=-1`** | `0`   | `-1`   | `0`   | `-1`  | `0`   | `-1`  | [`0`, `-1`] |
 
@@ -56,15 +57,24 @@ As you can see, when `c=0` or `c=-1` **the value of `z` never leaves a "bounded 
 and that's why they are part of the Mandelbrot set. But when `c=1` the values get bigger and bigger, 
 diverging from a possible bounded limit. Therefore `c=1` is **not** part of the Mandelbrot set.
 
-**What about the "bounded limit"?** Luckily, it is known that values inside the Mandelbrot set have 
-a `z` less than or equal to 2. So, if we find that `z>2`, then we can say that the given point is outside the set.
+#### What about the "bounded limit"? {#bounded-limit} 
+
+Luckily, it is known that values inside the Mandelbrot set have 
+an [absolute value][absolute-value] (*modulus*) of `z` less than or equal to 2.
+
+{% highlight shell %}
+z = a + bi
+|z| = sqrt(z) = sqrt(a² + b²) 
+{% endhighlight %}
+
+In a complex number `(a + bi)`, if `sqrt(a² + b²)>2`, then we are sure that the complex number is not part of the Mandelbrot set.
 
 ### 3. Applying the iteration repeatedly
 
 In theory, for every point in the set we should iterate infinite times through the function to check 
 if `z` stays bounded. Given that we cannot do that, for practical purposes we will have to decide a 
-**threshold value**. After reaching that maximum iteration we will decide that the point is outside 
-the Mandelbrot set, even though we are not 100% sure of that.
+**threshold value**. After reaching that maximum iteration we will decide that the point is inside 
+the Mandelbrot set, even though we might not be 100% sure of that in some cases.
 
 ## Conclusion
 
@@ -76,3 +86,4 @@ this interesting set. Stay tuned!
 [a-tour-of-go]: https://tour.golang.org/list 
 [wikipedia-mandelbrot]: https://en.wikipedia.org/wiki/Mandelbrot_set
 [mandelbrot-image-bw]: /images/mandelbrot/mandelbrot-wikipedia-bw.png
+[absolute-value]: https://en.wikipedia.org/wiki/Absolute_value#Complex_numbers
