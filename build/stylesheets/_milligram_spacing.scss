@@ -5,9 +5,11 @@
 button,
 dd,
 dt,
-figure,
-li {
+figure {
   margin-bottom: 1.0rem
+}
+li {
+  margin-bottom: 0;
 }
 figure.highlight pre {
   margin: 0;
@@ -39,7 +41,7 @@ figure {
   padding: 0;
 }
 figcaption {
-  padding: 0 1rem !important;
+  padding: 0 ;
   text-align: right;
   color: $color-tertiary;
   font-size: 1.2rem;

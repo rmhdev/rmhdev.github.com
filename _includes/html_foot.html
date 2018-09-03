@@ -1,4 +1,4 @@
-{% if (jekyll.environment != "production") or (!site.analytics.enabled) %}
+{% if (jekyll.environment != "production") or (false == site.analytics.enabled) %}
 <!--  disabled!
 {% endif %}
 <script type="text/javascript">
@@ -12,7 +12,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 </script>
-{% if (jekyll.environment != "production") or (!site.analytics.enabled) %}
+{% if (jekyll.environment != "production") or (false == site.analytics.enabled) %}
 -->
 {% endif %}
 
@@ -32,4 +32,4 @@
 -->
 {% endcomment %}
 
-<!-- version: "{{ site.time | date: '%c' }}", env: "{{ jekyll.environment }}" -->
+<!-- version: "{{ site.time | date: date_to_xmlschema }}", env: "{{ jekyll.environment }}" -->

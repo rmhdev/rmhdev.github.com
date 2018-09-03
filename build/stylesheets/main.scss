@@ -130,6 +130,15 @@ main.post {
   }
 }
 
+figure.image {
+  margin: 0 0 $margin-bottom 0;
+
+  figcaption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 figure.highlight {
   margin: 0 0 $margin-bottom 0;
   padding: 1rem 1.5rem !important;
