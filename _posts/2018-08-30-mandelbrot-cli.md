@@ -4,7 +4,9 @@ title:      "The Mandelbrot set, step by step (2): CLI version"
 date:       2018-08-31 00:10:00 +0500
 categories: posts
 abstract:   "In this post I develop an app in Golang that displays the Mandelbrot set in the CLI"
-published:  false
+image:      "/images/mandelbrot/mandelbrot-cli.jpg"
+image-alt:  "A low resolution version of the the Mandelbrot set displayed in the command line interface, with white font color over a dark background"
+published:  true
 ---
 
 Welcome to the second post of the series where I develop an app in the Go programming language 
@@ -181,7 +183,7 @@ Let's see how the absolute value of some complex numbers varies through iteratio
 | *B*: | `-2.5 + 1.0i`   | `0.00` | `2.69` |        |        |        |        |
 | *C*: | `-0.75 + 0.75i` | `0.00` | `1.06` | `0.84` | `1.35` | `2.37` |        |
 
-For some complex numbers (like *A*) the absolute value is never greater than 2. But in other cases, 
+For some complex numbers (like *A*) its absolute value never gets bigger than 2. But in other cases, 
 like *B* and *C*, the continuous iteration makes them diverge at some point. Depending of the iteration, 
 the complex number is part of the set or not. This is why defining a correct **threshold** is so important.
 
@@ -221,7 +223,56 @@ Nice, we are almost there!
 
 ## Loop and print
 
+Now all we need to do is loop through all the pixels of our "image" and print the result in
+the CLI. Let's edit the main method: 
 
+{% highlight golang %}
+// main.go
+package main
+
+import "fmt"
+
+func main() {
+  config := Config{101, 51, -2.0, 0.5, -1.0, 1.0}
+  verifier := Verifier{20}
+  realC, imagC := 0.0, 0.0
+  for y := 0; y < config.height; y++ {
+    imagC, _ = config.toImag(y)
+    for x := 0; x < config.width; x++ {
+      realC, _ = config.toReal(x)
+      if verifier.isInside(realC, imagC) {
+        fmt.Print("*")
+      } else {
+        fmt.Print("·")
+      }
+    }
+    fmt.Println("")
+  }
+}
+{% endhighlight %}
+
+And now, let's build the project and run the generated executable file:
+
+{% highlight shell %}
+cd mandelbrot-step-by-step/
+go build
+./mandelbrot-step-by-step
+{% endhighlight %}
+
+If you execute this code in your machine, the result should be what you see in the next image:
+
+<figure class="image">
+<img src="/images/mandelbrot/mandelbrot-cli.jpg" />
+<figcaption>Lorem ipsum</figcaption>
+</figure>
+
+## Testing
+
+
+
+## Refactoring
+
+## Custom parameters
 
 [go-install]: https://golang.org/doc/install
 [atom-editor]: https://atom.io/
