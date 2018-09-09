@@ -15,20 +15,21 @@ type: article
             <div class="container">
                 <h1 class="title">{{ page.title }}</h1>
                 <div class="subtitle">
-                    <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}" pubdate>{{ page.date | date: date_format }}</time>
+                    <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date: date_format }}</time>
                     <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><span class="sr-only sr-only-focusable">permalink</span><span class="symbol" aria-hidden="true"></span></a>
                 </div>
             </div>
-{% comment %}
+
+{% if page.image %}
             <div class="header-image">
                 <div class="container">
                     <figure>
-                        <img src="/images/800x600.png" class="img-fluid">
-                        <figcaption>Lorem ipsum</figcaption>
+                        <img src="{{ page.image }}" class="img-fluid" alt="{{ page.image-alt }}">
                     </figure>
                 </div>
             </div>
-{% endcomment %}
+{% endif %}
+
         </header>
 
         <div class="content">

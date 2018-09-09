@@ -4,9 +4,9 @@ title:      "The Mandelbrot set, step by step (2): CLI version"
 date:       2018-08-31 00:10:00 +0500
 categories: posts
 abstract:   "In this post I develop an app in Golang that displays the Mandelbrot set in the CLI"
-image:      "/images/mandelbrot/mandelbrot-cli.jpg"
-image-alt:  "A low resolution version of the the Mandelbrot set displayed in the command line interface, with white font color over a dark background"
-published:  true
+image:      "/images/posts/2018-mandelbrot-cli.jpg"
+image-alt:  "Artistic representation. An old computer, over a colorful abstract background, displays a low resolution version of the Mandelbrot set."
+published:  false
 ---
 
 Welcome to the second post of the series where I develop an app in the Go programming language 
@@ -14,8 +14,8 @@ that displays the Mandelbrot set.
 
 ## Objectives
 
-In this post I will try to explain the **complex plane** where the Mandelbrot set works, and how to translate 
-this information into a matrix of points. Then I will write a first version of the app that displays the 
+In this post I will describe how to put into practice the theory behind the Mandelbrot set.
+Then I will write a first version of the app that displays the 
 set in the **Command Line Interface** (or CLI). 
 
 
@@ -36,7 +36,7 @@ git clone https://github.com/rmhdev/mandelbrot-step-by-step.git
 ## Configure the Mandelbrot set
 
 As we saw in the last post, the Mandelbrot set consists of **complex numbers** that comply with some rules.
-These complex numbers are numbers like `1.2 + 0.5i`, where `1.2` is the real part and `0.5i` is the imaginary part. 
+These complex numbers are numbers like `-1.2 + 0.5i`, where `-1.2` is the real part and `0.5i` is the imaginary part. 
 To display the Mandelbrot set in a two dimensional cartesian plane like an image, we will use the real part as 
 the `X` axis and the imaginary part and the `Y` axis. Both axis will be delimited by maximum and minimum values.
 
@@ -55,8 +55,8 @@ A good starting point for our app can be developing the next two methods:
 * `toReal(xPixel)` calculates the real part of a complex number.
 * `toImag(yPixel)` calculates the imaginary part of a complex number.
 
-Let’s think of a real case scenario: we want to generate a `10x10` pixels image of a Mandelbrot set 
-which limits are `[-2.5, 1.0]` for the real part (`X` axis) 
+Let’s think of a real case scenario: we want to generate a `11x11` pixels image of a Mandelbrot set 
+which limits are `[-2.5, 2.5]` for the real part (`X` axis) 
 and `[-1.0, 1.0]` for the imaginary part (`Y` axis).
 
 <figure class="image">
@@ -69,10 +69,11 @@ Looking at the image, it's easy to spot some cases that will help us check if ou
 | Pixel coordinate     | Expected complex number     |
 | -------------------- | --------------------------- |
 | `(0, 0)`             | `-2.5 + 1.0i`               |
-| `(9, 9)`             | `1.0 - 1.0i`                |
-| `(10, 4)`            | Error! `x` is out of bounds |
+| `(10, 10)`           | `2.5 - 1.0i`                |
+| `(5, 5)`             | `0 + 0i`                    |
+| `(11, 4)`            | Error! `x` is out of bounds |
 | `(-1, 0)`            | Error! `x` is out of bounds |
-| `(0, 10)`            | Error! `y` is out of bounds |
+| `(0, 11)`            | Error! `y` is out of bounds |
 | `(0, -1)`            | Error! `y` is out of bounds |
 
 
@@ -85,12 +86,12 @@ Let's create a type `Config` that groups all these values:
 package main
 
 type Config struct {
+  width   int
+  height  int
   minReal float64
   maxReal float64
   minImag float64
   maxImag float64
-  width   int
-  height  int
 }
 {% endhighlight %}
 
@@ -106,12 +107,12 @@ import (
 )
 
 type Config struct {
+  width   int
+  height  int
   realMin float64
   realMax float64
   imagMin float64
   imagMax float64
-  width   int
-  height  int
 }
 
 func (c Config) toReal(x int) (float64, error) {
@@ -172,6 +173,8 @@ z3 = (z2)² + c
 But, **when do we stop**? For a complex number `c`, in every iteration of the function we need to check the 
 **absolute value** of z (`|z|`):
 
+`|z| = |(a + bi)| = sqrt(a² + b²)`
+
 * If `|z|` is greater than 2, then `c` is not part of the set.
 * If after a maximum number of iterations `|z|` is not bigger than 2, then `c` is part of the set.
 
@@ -204,7 +207,7 @@ func (v Verifier) isInside(realC float64, imagC float64) bool {
   for i := 0; i < v.maxIterations; i++ {
     modulusZ = math.Sqrt(realZ*realZ + imagZ*imagZ)
     if modulusZ > 2 {
-     return false
+      return false
     }
     realZ, imagZ = v.next(realZ, imagZ, realC, imagC)
   }
@@ -214,7 +217,7 @@ func (v Verifier) isInside(realC float64, imagC float64) bool {
 func (v Verifier) next(realZ float64, imagZ float64, realC float64, imagC float64) (float64, float64) {
   realNew := realZ*realZ - imagZ*imagZ + realC
   imagNew := 2*realZ*imagZ + imagC
-
+  
   return realNew, imagNew
 }
 {% endhighlight %}
@@ -263,16 +266,78 @@ If you execute this code in your machine, the result should be what you see in t
 
 <figure class="image">
 <img src="/images/mandelbrot/mandelbrot-cli.jpg" />
-<figcaption>Lorem ipsum</figcaption>
+<figcaption>The Mandelbrot set, displayed in the command-line interface</figcaption>
 </figure>
 
-## Testing
-
-
-
-## Refactoring
-
 ## Custom parameters
+
+Unfortunately, the parameters of this Mandelbrot set are hardcoded inside the app. 
+Let's add **command-line flags** to customize the result!
+
+{% highlight golang %}
+// main.go
+package main
+
+import (
+  "flag"
+  "fmt"
+)
+
+func main() {
+  width := flag.Int("width", 101, "width")
+  height := flag.Int("height", 41, "height")
+  rMin := flag.Float64("realMin", -2.0, "Min real part")
+  rMax := flag.Float64("realMax", 0.5, "Max real part")
+  iMin := flag.Float64("imagMin", -1.0, "Min imaginary part")
+  iMax := flag.Float64("imagMax", 1.0, "Max imaginary part")
+  iterations := flag.Int("iterations", 50, "Max iterations")
+  
+  flag.Parse() // Don't forget this!
+  
+  config := Config{*width, *height, *rMin, *rMax, *iMin, *iMax}
+  verifier := Verifier{*iterations}
+  
+  realC, imagC := 0.0, 0.0
+  for y := 0; y < config.height; y++ {
+    imagC, _ = config.toImag(y)
+    for x := 0; x < config.width; x++ {
+      realC, _ = config.toReal(x)
+      if verifier.isInside(realC, imagC) {
+        fmt.Print("*")
+      } else {
+        fmt.Print("·")
+      }
+    }
+    fmt.Println("")
+  }
+}
+{% endhighlight %}
+
+Remember to rebuild the app:
+
+{% highlight shell %}
+go build
+{% endhighlight %}
+
+Now the app accepts **custom values** entered from the command line:
+
+{% highlight shell %}
+./mandelbrot-step-by-step -iterations=5
+{% endhighlight %}
+
+## Testing and Refactoring
+
+If you take a look at the source code of the app, you'll find tests for most part of the code 
+(look for `*_test.go` files`). I've been following a **Test Driven Development** ([TDD][tdd]) approach, 
+which means [writing tests before actually writing the code itself][test-first].
+This tests give us a *safety net* to refactor our code without breaking things by accident.
+
+Check the [`cc79a24`][cc79a24] commit (and the next ones) if you want to see a step-by-step TDD approach 
+of how I've developed the `toReal(x)` method.
+
+Take into account that our app is not finished yet: it needs
+
+
 
 [go-install]: https://golang.org/doc/install
 [atom-editor]: https://atom.io/
@@ -280,3 +345,6 @@ If you execute this code in your machine, the result should be what you see in t
 [project-repo]: https://github.com/rmhdev/mandelbrot-step-by-step.git
 [install-git]: https://help.github.com/articles/set-up-git/
 [mandelbrot-definition]: {% post_url 2018-08-30-mandelbrot-introduction %}#definition
+[tdd]: https://en.wikipedia.org/wiki/Test-driven_development
+[test-first]: http://www.extremeprogramming.org/rules/testfirst.html
+[cc79a24]: https://github.com/rmhdev/mandelbrot-step-by-step/commit/cc79a24d9e7464507e21371c5142fa7fa578c058

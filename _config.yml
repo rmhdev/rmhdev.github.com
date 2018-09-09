@@ -4,7 +4,7 @@ description: "Software developer from Donostia/San Sebastián"
 date_format: "%B %d, %Y"
 permalink: "pretty"
 lang: "en"
-exclude: ['node_modules', "README.md", "package.json", "*.lock", ".idea", "Gemfile", "build", "assets"]
+exclude: ['node_modules', "README.md", "package.json", "*.lock", ".idea", "Gemfile", "build", "misc", "assets"]
 
 license:
   name: "Creative Commons Attribution-ShareAlike 4.0 International License"
