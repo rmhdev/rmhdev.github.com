@@ -1,12 +1,14 @@
 ---
-layout:     post
-title:      "The Mandelbrot set, step by step (1): introduction"
-date:       2018-08-30 07:00:00 +0700
-categories: posts
-abstract:   "First of a series of posts where I develop step by step an app in Golang that displays the Mandelbrot set."
-image:      "/images/posts/2018-mandelbrot-intro.jpg"
-image-alt:  "Artistic interpretation. Three man observe a blackboard filled with a zoomed and colorized representation if the Mandelbrot set, while a woman writes in a notebook."
-published:  true
+layout:         post
+title:          "The Mandelbrot set, step by step (1): introduction"
+date:           2018-08-30 07:00:00 +0700
+categories:     posts
+abstract:       "First of a series of posts where I build an app that displays the Mandelbrot set, using the Go programming language"
+image:          "/images/posts/2018-mandelbrot-intro.jpg"
+image-alt:      "Artistic interpretation. Three man observe a blackboard filled with a zoomed and colorized representation if the Mandelbrot set, while a woman writes in a notebook."
+image-source:   https://github.com/rmhdev/rmhdev.github.com/tree/master/misc/illustrations/2018-mandelbrot-intro
+image-caption:  "2018 rmhdev"
+published:      true
 ---
 
 During a trip back in July'18 I started learning the Go programming language by taking 

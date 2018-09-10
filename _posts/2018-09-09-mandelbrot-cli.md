@@ -1,12 +1,14 @@
 ---
-layout:     post
-title:      "The Mandelbrot set, step by step (2): CLI version"
-date:       2018-08-31 00:10:00 +0500
-categories: posts
-abstract:   "In this post I develop an app in Golang that displays the Mandelbrot set in the CLI"
-image:      "/images/posts/2018-mandelbrot-cli.jpg"
-image-alt:  "Artistic representation. An old computer, over a colorful abstract background, displays a low resolution version of the Mandelbrot set."
-published:  false
+layout:         post
+title:          "The Mandelbrot set, step by step (2): CLI version"
+date:           2018-09-09 05:00:00 +0700
+categories:     posts
+abstract:       "In this post we put into practice the theory of the Mandelbrot set, displaying it in the command line interface"
+image:          "/images/posts/2018-mandelbrot-cli.jpg"
+image-alt:      "Artistic representation. An old computer, over a colorful abstract background, displays a low resolution version of the Mandelbrot set."
+image-source:   https://github.com/rmhdev/rmhdev.github.com/tree/master/misc/illustrations/2018-mandelbrot-cli
+image-caption:  "2018 rmhdev"
+published:      false
 ---
 
 Welcome to the second post of the series where I develop an app in the Go programming language 
@@ -328,15 +330,17 @@ Now the app accepts **custom values** entered from the command line:
 ## Testing and Refactoring
 
 If you take a look at the source code of the app, you'll find tests for most part of the code 
-(look for `*_test.go` files`). I've been following a **Test Driven Development** ([TDD][tdd]) approach, 
+(look for `*_test.go` files). I've been following a **Test Driven Development** ([TDD][tdd]) approach, 
 which means [writing tests before actually writing the code itself][test-first].
-This tests give us a *safety net* to refactor our code without breaking things by accident.
+This tests provide a *safety net* to refactor the code without breaking things by accident.
 
-Check the [`cc79a24`][cc79a24] commit (and the next ones) if you want to see a step-by-step TDD approach 
+Check the [`cc79a24`][cc79a24] commit (and the following ones) if you want to see a step-by-step TDD approach 
 of how I've developed the `toReal(x)` method.
 
-Take into account that our app is not finished yet: it needs
-
+There are many improvements that could make the code clearer and more robust, but 
+**at this point the app is good enough**: it does what we want (prints the Mandelbrot set in the CLI) 
+and does is correctly. In the next post I will add some enhancements while adding the ability 
+to generate images in black and white. Stay tuned!
 
 
 [go-install]: https://golang.org/doc/install
