@@ -76,18 +76,7 @@ main.post {
     .subtitle {
       margin-bottom: $margin-bottom;
     }
-    .permalink {
-      text-decoration: none;
-      .symbol {
-        &::before {
-          color: $color-quaternary;
-          content: "#";
-          &:hover {
-            color: $color-tertiary;
-          }
-        }
-      }
-    }
+
     .header-image {
       margin-bottom: $margin-bottom;
 
@@ -95,7 +84,12 @@ main.post {
         .container {
           padding-left: 0;
           padding-right: 0;
+
+          figcaption {
+            padding-right: 1rem;
+          }
         }
+
       }
     }
   }

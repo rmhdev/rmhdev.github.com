@@ -15,8 +15,7 @@ type: article
             <div class="container">
                 <h1 class="title">{{ page.title }}</h1>
                 <div class="subtitle">
-                    <time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date: date_format }}</time>
-                    <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><span class="sr-only sr-only-focusable">permalink</span><span class="symbol" aria-hidden="true"></span></a>
+                    Posted on <a href="{{ page.url | absolute_url }}" class="permalink" title="Permalink"><time datetime="{{ page.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date: date_format }}</time></a>
                 </div>
             </div>
 
@@ -25,7 +24,11 @@ type: article
                 <div class="container">
                     <figure>
                         <img src="{{ page.image }}" class="img-fluid" alt="{{ page.image-alt }}">
+                    {%- if page.image-source != "" or page.image-caption != "" -%}
+                        <figcaption>{% if page.image-caption != "" %}{{ page.image-caption }}. {% endif %}{%- if page.image-source != "" -%}<a href="{{ page.image-source }}">Image source</a>{% else %}{{ page.image-caption }}{% endif %}</figcaption>
+                    {%- endif -%}
                     </figure>
+
                 </div>
             </div>
 {% endif %}
