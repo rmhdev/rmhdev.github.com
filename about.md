@@ -7,7 +7,7 @@ Hi, my name is **Rober Martín H** and I'm a software developer since **2006**, 
 
 ## Skills
 
-I mostly code in **PHP** and **Javascript**, and Symfony is my favorite framework for developing apps. 
+I mostly code in **PHP** and **Javascript**, and [Symfony][symfony] is my favorite framework for developing apps. 
 
 ## Contact
 
@@ -25,7 +25,7 @@ Except where otherwise noted, content on this site is licensed under a  [{{ site
 [linkendin]: http://linkedin.com/in/{{ site.author.linkedin }}/
 [twitter]: http://twitter.com/{{ site.author.twitter }}
 [jekyll]: {{ site.tools.jekyll }}
-[skeleton]: {{ site.tools.skeleton }}
 [github_pages]: http://pages.github.com
 [fork_me]: {{ site.repository.fork_me }}
 [license]: {{ site.license.url }}
+[symfony]: https://symfony.com/
