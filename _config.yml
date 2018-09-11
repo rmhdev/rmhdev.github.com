@@ -7,13 +7,11 @@ lang: "en"
 exclude: ['node_modules', "README.md", "package.json", "*.lock", ".idea", "Gemfile", "build", "misc", "assets"]
 
 license:
-  name: "Creative Commons Attribution-ShareAlike 4.0 International License"
+  name: "Licensed under Creative Commons Attribution-ShareAlike 4.0 International License"
   alias: "CC BY-SA 4.0"
   url:  http://creativecommons.org/licenses/by-sa/4.0/
-  logo: "https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
 tools:
   jekyll:   https://github.com/mojombo/jekyll/
-  skeleton: http://getskeleton.com
 
 author:
   name:             "Rober Martín H"
