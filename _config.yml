@@ -32,3 +32,6 @@ analytics:
   enabled:  true
   google: 
     tracking_id:  'UA-22011276-1'
+
+collections:
+  - projects

@@ -59,6 +59,12 @@ body.home > main.articles {
   }
 }
 
+body.about {
+  header h2 {
+    border-bottom: 1px solid #e1e1e1;
+  }
+}
+
 body > nav.post,
 body > nav.page,
 body > nav.error {

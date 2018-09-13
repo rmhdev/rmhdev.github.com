@@ -8,11 +8,15 @@ type: home
         <p class="">{{ site.description }}</p>
     </div>
 </header>
+<main>
 {%- if site.posts.size > 0 -%}
-<main class="articles">
-    <div class="container">
-        <h2>Articles</h2>
-{{- content -}}
+    <section class="articles">
+        <div class="container">
+            <header>
+                <h2>Articles</h2>
+            </header>
+            {{- content -}}
         </div>
-</main>
+    </section>
 {%- endif -%}
+</main>

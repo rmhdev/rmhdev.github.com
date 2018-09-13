@@ -1,0 +1,53 @@
+---
+layout: default
+type: about
+---
+<nav class="page">
+    <div class="container">
+        <a class="author" href="{% link index.html %}">{{ site.author.name }}</a>
+    </div>
+</nav>
+<main>
+    <div class="container">
+
+        <header class="header">
+            <h1>{{ page.title }}</h1>
+        </header>
+
+        <div class="content">
+            <section class="personal">
+{{ content }}
+            </section>
+
+{%- if site.projects.size > 0 -%}
+            <section class="projects">
+                <header>
+                    <h2>Pet projects</h2>
+                    <p>These are some of my open source projects created in my spare time.</p>
+                </header>
+
+                {%- for project in site.projects -%}
+                <article>
+                    <header>
+                        <h3>{%- if project.repository != "" -%}<a href="{{ project.repository }}" class="name">{{ project.name }}</a>{% else %}<span class="name">{{ project.name }}</span>{% endif %}</h3>
+                    </header>
+                    {%- if project.web != "" -%}
+                    <p>{{ project.excerpt | remove: '<p>' | remove: '</p>' }} Check the <a href="{{ project.web }}"><strong>live demo</strong></a>.</p>
+                    {%- else -%}
+                    {{ project.excerpt }}
+                    {%- endif -%}
+                </article>
+                {%- endfor -%}
+            </section>
+{%- endif -%}
+
+            <section>
+                <header>
+                    <h2>License</h2>
+                </header>
+                <p>Except where otherwise noted, content on this site is licensed under a <a href="{{ site.license.url }}">{{ site.license.name }}</a>.</p>
+                <p>The page is hosted on <a href="https://pages.github.com">GitHub Pages</a>; you can <a href="{{ site.repository.fork_me }}">fork the code</a>.</p>
+            </section>
+        </div>
+    </div>
+</main>
