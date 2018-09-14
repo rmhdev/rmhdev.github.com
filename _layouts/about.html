@@ -23,7 +23,7 @@ type: about
             <section class="projects">
                 <header>
                     <h2>Pet projects</h2>
-                    <p>These are some of my open source projects created in my spare time.</p>
+                    <p>These are some open source projects created in my spare time.</p>
                 </header>
 
                 {%- for project in site.projects -%}
@@ -32,7 +32,7 @@ type: about
                         <h3>{%- if project.repository != "" -%}<a href="{{ project.repository }}" class="name">{{ project.name }}</a>{% else %}<span class="name">{{ project.name }}</span>{% endif %}</h3>
                     </header>
                     {%- if project.web != "" -%}
-                    <p>{{ project.excerpt | remove: '<p>' | remove: '</p>' }} Check the <a href="{{ project.web }}"><strong>live demo</strong></a>.</p>
+                    <p>{{ project.excerpt | remove: '<p>' | remove: '</p>' }} Check the <a href="{{ project.web }}"><span>live demo</span></a>.</p>
                     {%- else -%}
                     {{ project.excerpt }}
                     {%- endif -%}
