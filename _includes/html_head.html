@@ -23,19 +23,20 @@
 {%- endcase -%}
 
 {%- case page.layout -%}
-    {% when 'post' %}
+{% when 'post' %}
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="og:description" content="{{ page.abstract }}" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
     {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>
-    <meta property="og:image:alt" content="{% if page.image-alt %}{{ page.image-alt }}{% else %}{{ page.abstract }}{% endif %}"/>{% endif %}
-    {% else %}
+    <meta property="og:image:alt" content="{% if page.image-alt %}{{ page.image-alt }}{% else %}{{ page.abstract }}{% endif %}"/>
+    <meta name="twitter:card" content="summary_large_image">{% endif %}
+{% else %}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ site.title }}" />
     <meta property="og:description" content="{{ site.description }}">
     <meta property="og:url" content="{{ site.url | absolute_url }}" />
-{%- endcase -%}
+{% endcase %}
     <meta property="og:locale" content="{{ site.lang }}" />
     <meta name="twitter:site" content="@{{ site.author.twitter }}">
     <meta name="twitter:creator" content="@{{ site.author.twitter }}">
