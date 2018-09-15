@@ -3,6 +3,7 @@ layout:         post
 title:          "The Mandelbrot set, step by step (2): CLI version"
 date:           2018-09-11 05:00:00 +0700
 categories:     posts
+tags:           mandelbrot golang
 abstract:       "In this post I put into practice the theory of the Mandelbrot set, displaying it in the command-line interface"
 image:          "/images/posts/2018-mandelbrot-cli.jpg"
 image-alt:      "Artistic representation. An old computer, over a colorful abstract background, displays a low resolution version of the Mandelbrot set."

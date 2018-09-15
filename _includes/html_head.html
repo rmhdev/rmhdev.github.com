@@ -31,6 +31,11 @@
     {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>
     <meta property="og:image:alt" content="{% if page.image-alt %}{{ page.image-alt }}{% else %}{{ page.abstract }}{% endif %}"/>
     <meta name="twitter:card" content="summary_large_image">{% endif %}
+    <meta property="article:published" content="{{ page.date }}"/>{% for category in page.categories %}
+    <meta property="article:section" content="{{ category }}"/>{%- endfor -%}
+    {% for tag in page.tags %}
+    <meta property="article:tag" content="{{ tag }}"/>{% endfor %}
+
 {% else %}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ site.title }}" />

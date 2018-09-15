@@ -3,6 +3,7 @@ layout:         post
 title:          "The Mandelbrot set, step by step (1): introduction"
 date:           2018-08-30 07:00:00 +0700
 categories:     posts
+tags:           mandelbrot golang
 abstract:       "First of a series of posts where I build an app that displays the Mandelbrot set, using the Go programming language"
 image:          "/images/posts/2018-mandelbrot-intro.jpg"
 image-alt:      "Artistic interpretation. Three man observe a blackboard filled with a zoomed and colorized representation if the Mandelbrot set, while a woman writes in a notebook."
