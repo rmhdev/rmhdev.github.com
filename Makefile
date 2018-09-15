@@ -4,6 +4,7 @@ help:
 	@echo "  serve           launch jekyll"
 	@echo "  watch-sass      watch for sass changes"
 	@echo "  compile-sass    compile and compress sass styles"
+	@echo "  icons    		 generate icons from raw original"
 
 .PHONY:
 serve:
@@ -16,3 +17,7 @@ watch-sass:
 .PHONY:
 compile-sass:
 	npm run sass-prod
+
+.PHONY:
+icons:
+	npm run icons
