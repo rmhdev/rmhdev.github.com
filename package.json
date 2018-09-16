@@ -8,6 +8,7 @@
   "scripts": {
     "sass": "node-sass -w build/stylesheets/ -o css/",
     "sass-prod": "node-sass build/stylesheets/ -o css/ --output-style compressed",
-    "icons": "node scripts/icons.js"
+    "icons": "node tasks/icons.js",
+    "illustrations": "node tasks/illustrations.js"
   }
 }
