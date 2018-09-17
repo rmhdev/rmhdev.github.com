@@ -19,3 +19,9 @@ Launch the local jekyll server:
 ```bash
 bundle exec jekyll serve
 ```
+
+Update bundles:
+
+```bash
+bundle update
+```
