@@ -15,6 +15,10 @@ published:      true
 Welcome to the third post of the series where I develop an app that displays the Mandelbrot set 
 using the Go programming language.
 
+## Objectives
+
+In this post we will improve the app to generate black & white images of the Mandelbrot set.
+
 ## Requirements
 
 Check the section about [requirements in the previous post][requirements]. If you want to see the code 
@@ -24,10 +28,6 @@ execute the next command to retrieve the code:
 {% highlight shell %}
 git checkout 85e9d1b
 {% endhighlight %}
-
-## Objectives
-
-In this post we will improve the app to generate black & white images of the Mandelbrot set.
 
 ## Representation of a Mandelbrot set
 
