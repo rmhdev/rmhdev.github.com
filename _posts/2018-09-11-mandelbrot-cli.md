@@ -338,6 +338,8 @@ These tests provide a *safety net* to refactor the code without breaking things 
 Check the [`cc79a24`][cc79a24] commit (and the following ones) if you want to see a step-by-step TDD approach 
 of how I've developed the `toReal(x)` method.
 
+## Next
+
 There are many improvements that could make the code clearer and more robust, but 
 **at this point the app is good enough**: it does what we want (prints the Mandelbrot set in the CLI) 
 and does is correctly. In the next post I will enhance the app while adding the ability 
