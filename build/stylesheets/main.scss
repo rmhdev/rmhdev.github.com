@@ -40,21 +40,19 @@ body > main {
 }
 
 
-body.home > main.articles {
+body.home {
   article time.published-at {
     color: $color-secondary;
     font-style: italic;
     display: block;
     white-space: nowrap;
     @media (min-width: 40.0rem) {
-      float: right;
+      float: left;
       display: inline;
-      margin-left: $margin-bottom;
-    }
-
-
-    &::after {
-      content: "";
+      margin-right: 1rem;
+      &::after {
+        content: ":";
+      }
     }
   }
 }
