@@ -1,7 +1,7 @@
 # The Mandelbrot set, step by step (2): CLI version
 
 * Made with GIMP.
-* File: [2018-mandelbrot-cli.jpg](2018-mandelbrot-cli/2018-mandelbrot-cli.jpg)
+* File: [2018-mandelbrot-cli.jpg](2018-mandelbrot-cli.jpg)
 * Creation date: 2018-09-09
 * License: [Creative Commons Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 * Alternative text: Artistic representation. An old computer, over a colorful abstract background, displays a low resolution version of the Mandelbrot set.

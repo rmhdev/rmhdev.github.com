@@ -1,7 +1,7 @@
 # The Mandelbrot set, step by step (1): introduction
 
 * Made with GIMP.
-* File: [2018-mandelbrot-intro.jpg](2018-mandelbrot-intro/2018-mandelbrot-intro.jpg)
+* File: [2018-mandelbrot-intro.jpg](2018-mandelbrot-intro.jpg)
 * Creation date: 2018-09-09
 * License: [Creative Commons Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 * Alternative text: Artistic interpretation. Three man observe a blackboard filled with a zoomed and colorized representation if the Mandelbrot set, while a woman writes in a notebook.

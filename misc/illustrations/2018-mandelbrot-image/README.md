@@ -1,7 +1,7 @@
 # The Mandelbrot set, step by step (3): image creation
 
 * Made with GIMP.
-* File: [2018-mandelbrot-image.jpg](2018-mandelbrot-image/2018-mandelbrot-image.jpg)
+* File: [2018-mandelbrot-image.jpg](2018-mandelbrot-image.jpg)
 * Creation date: 2018-09-16
 * License: [Creative Commons Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 * Alternative text: Artistic interpretation. An elder woman takes a photo with a point-and-shoot camera, while at her back there is a Mandelbrot set.
