@@ -31,7 +31,7 @@ type: about
                     <header>
                         <h3>{%- if project.repository != "" -%}<a href="{{ project.repository }}" class="name">{{ project.name }}</a>{% else %}<span class="name">{{ project.name }}</span>{% endif %}</h3>
                     </header>
-                    {%- if project.web != "" -%}
+                    {%- if (project.web) && (project.web != "") -%}
                     <p>{{ project.excerpt | remove: '<p>' | remove: '</p>' }} Check the <a href="{{ project.web }}"><span>live demo</span></a>.</p>
                     {%- else -%}
                     {{ project.excerpt }}
