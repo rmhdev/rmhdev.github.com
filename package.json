@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "milligram": "^1.4.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "normalize.css": "^8.0.0",
     "sharp": "^0.26.0"
   },
