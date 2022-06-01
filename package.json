@@ -3,7 +3,7 @@
     "milligram": "^1.4.0",
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.0",
-    "sharp": "^0.26.0"
+    "sharp": "^0.30.5"
   },
   "scripts": {
     "sass": "node-sass -w build/stylesheets/ -o css/",
